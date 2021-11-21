@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class UserRepository {
@@ -22,5 +23,9 @@ public class UserRepository {
 
     public List<User> getEmail(String user_email){
         return userCrudRepository.findAllByEmail(user_email);
+    }
+
+    public Optional<User> getClient(int id){
+        return userCrudRepository.findById(id);
     }
 }
