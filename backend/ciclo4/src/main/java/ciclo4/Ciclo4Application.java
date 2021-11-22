@@ -10,6 +10,10 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 @SpringBootApplication
 public class Ciclo4Application {
 
+    /**
+     * Main
+     * @param args 
+     */
 	public static void main(String[] args) {
 		SpringApplication.run(Ciclo4Application.class, args);
 	}
