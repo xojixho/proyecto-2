@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @EnableConfigurationProperties
-@EntityScan(basePackages={"ciclo4.modelo"})
+@EntityScan(basePackages={"ciclo4.model"})
 @SpringBootApplication
 public class Ciclo4Application {
 
