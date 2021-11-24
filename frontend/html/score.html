@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article id="tab6">
+        <h2>Score</h2>
+        <div>
+            <label for="message">Mensaje:</label>
+            <input type="text" id="SmessageText" placeholder="Mensaje">
+            <label for="Stars">Calificación:</label>
+            <input type="number" id="Sstars" placeholder="Estrellas">
+            <label>Selecciona la reservación: </label>
+            <select id="select-reservation"></select>
+            <button onclick="guardarInfoScore()">Guardar Score</button>
+        </div>
+        <div id="resultado6"></div>
+        <script type="text/javascript">
+            window.onload = autoInicioScore();
+        </script>
+    </article>
+</body>
+</html>
