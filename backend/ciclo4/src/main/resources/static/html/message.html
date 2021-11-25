@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article id="tab4">
+        <h2>Mensajes</h2>
+        <div>
+            <label for="message">Mensaje:</label>
+            <input type="text" id="MmessageText" placeholder="Mensaje" required>
+            <label>Selecciona el cliente: </label>
+            <select id="select-client"></select>
+            <label>Selecciona el ortopedico: </label>
+            <select id="select-ortopedic"></select>
+            <button onclick="guardarInfoMessage()">Guardar Mensaje</button>
+        </div>
+        <div id="resultado4"></div>
+        <script type="text/javascript">
+            window.onload = autoInicioMessage();
+        </script>
+        <div>
+    </article>
+</body>
+</html>
