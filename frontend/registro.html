@@ -5,61 +5,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="shortcut icon" href="/images/favicon.png" type= "image/x-icon">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-    <link rel="stylesheet" href="css/registrar.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/registro.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#login-form').on('submit', function(e) {
-                e.preventDefault();
-                iniciarSesion();
-            });
-            $('#close').on('click', function() {
-                $('#myModal').modal('hide');
-            });
-        });
-
-        function iniciarSesion() {
-            var correo = $('#correo').val();
-            var contraseña = $('#contraseña').val();
-            var url = 'http://129.151.119.77:8080/api/user/' + correo + '/' + contraseña;
-            
-            $.ajax({ 
-                url: url,
-                async: true,
-                type:'GET',
-                dataType: 'json',
-                contentType: 'application/json',
-                success: function(json){
-                    var name = json.name
-                    if (name === 'NO DEFINIDO') {
-                        $('#titulo').text(`No existe un usuario`);
-                    $('#myModal').modal('show');
-                    } else {
-                        $('#titulo').text('Bienvenido ' + name);
-                        $('#myModal').modal('show');
-                    }
-                    
-                },
-                error: function(error) {
-                    $('#titulo').text(`No existe un usuario`);
-                    $('#myModal').modal('show');
-                }
-            });
-        }
-    </script>
+    <link rel="stylesheet" href="css/registrar.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
     <title> OCHO BITS Registro Usuario</title>
 </head>
 
-<body background="/images/fondo3.jpg" style=background-size:cover>
+<body background="./images/fondo3.jpg" style=background-size:cover>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 		<div class="container-fluid">
-		  <a class="navbar-brand" href="#"> <img src="/images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
+		  <a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
 
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -133,6 +93,7 @@
         </div>
     </div>
 </div>
+
 </body>
 
 </html>
