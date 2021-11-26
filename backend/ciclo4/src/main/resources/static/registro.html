@@ -1,65 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="shortcut icon" href="/images/favicon.png" type= "image/x-icon">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-    <link rel="stylesheet" href="css/registrar.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#login-form').on('submit', function(e) {
-                e.preventDefault();
-                iniciarSesion();
-            });
-            $('#close').on('click', function() {
-                $('#myModal').modal('hide');
-            });
-        });
-
-        function iniciarSesion() {
-            var correo = $('#correo').val();
-            var contraseña = $('#contraseña').val();
-            var url = 'http://129.151.121.31:8080/api/user/' + correo + '/' + contraseña;
-            
-            $.ajax({ 
-                url: url,
-                async: true,
-                type:'GET',
-                dataType: 'json',
-                contentType: 'application/json',
-                success: function(json){
-                    var name = json.name
-                    if (name === 'NO DEFINIDO') {
-                        $('#titulo').text(`No existe un usuario`);
-                    $('#myModal').modal('show');
-                    } else {
-                        $('#titulo').text('Bienvenido ' + name);
-                        $('#myModal').modal('show');
-                    }
-                    
-                },
-                error: function(error) {
-                    $('#titulo').text(`No existe un usuario`);
-                    $('#myModal').modal('show');
-                }
-            });
-        }
-    </script>
+    <script src="./js/registro.js"></script>
+    <link rel="stylesheet" href="css/registrar.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
     <title> OCHO BITS Registro Usuario</title>
 </head>
 
-<body background="/images/fondo3.jpg" style=background-size:cover>
+<body background="./images/fondo3.jpg" style=background-size:cover>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 		<div class="container-fluid">
-		  <a class="navbar-brand" href="#"> <img src="/images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
+		  <a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
 
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -79,19 +39,17 @@
 		</div>
 	  </nav>
 
-
-
-    <div id="login">
+        <div id="login">
         <h3 class="text-center text-white pt-5">OCHO BITS LTDA</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <div id="login-form" class="form">
                             <h3 class="text-center text-info">Crear Cuenta</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Nombre:</label><br />
-                                <input type="username" name="username" id="username" class="form-control" required/>
+                                <input type="text" name="username" id="username" class="form-control" required/>
                             </div>
                             <div class="form-group">
                                 <label for="useremail" class="text-info">E-mail:</label><br />
@@ -106,25 +64,26 @@
                                 <input type="text" name="passwordrepeat" id="passwordrepeat" class="form-control" required/>
                             </div>
                             <div class="form-group text-center">
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Crear" />                                
+                                <input id="inputData" type="submit" name="submit" class="btn btn-info btn-md" value="Crear" onclick="validateForm()"/>                                
                             </div>
                             <div class="form-group text-center">
                                 <label for="remember-me" class="text-info">
                                     <span>Ya tienes una cuenta? <a href="login.html" class="text-info">Inicia sesion aqui</a></span>
                                 </label>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="titulo"></h4>
+              <h4 class="modal-title" id="title-answer"></h4>
             </div>
             <div class="modal-footer">
               <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -132,7 +91,6 @@
           </div>
         </div>
     </div>
-</div>
-</body>
 
+</body>
 </html>

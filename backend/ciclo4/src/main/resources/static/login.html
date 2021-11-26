@@ -1,65 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link rel="shortcut icon" href="/images/favicon.png" type= "image/x-icon">
-    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="shortcut icon" href="./images/favicon.png" type= "image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css"/>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
-    </script>
-
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#login-form').on('submit', function(e) {
-                e.preventDefault();
-                iniciarSesion();
-            });
-            $('#close').on('click', function() {
-                $('#myModal').modal('hide');
-            });
-        });
-
-        function iniciarSesion() {
-            var correo = $('#correo').val();
-            var contraseña = $('#contraseña').val();
-            var url = 'http://129.151.121.31:8080/api/user/' + correo + '/' + contraseña;
-            
-            $.ajax({ 
-                url: url,
-                async: true,
-                type:'GET',
-                dataType: 'json',
-                contentType: 'application/json',
-                success: function(json){
-                    var name = json.name
-                    if (name === 'NO DEFINIDO') {
-                        $('#titulo').text(`No existe un usuario`);
-                    $('#myModal').modal('show');
-                    } else {
-                        $('#titulo').text('Bienvenido ' + name);
-                        $('#myModal').modal('show');
-                    }
-                    
-                },
-                error: function(error) {
-                    $('#titulo').text(`No existe un usuario`);
-                    $('#myModal').modal('show');
-                }
-            });
-        }
-    </script>
-
+    <script src="./js/login.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <title>OCHO BITS Acceso al Sistema</title>
 </head>
 
-<body  background="/images/fondo2.jpg" style=background-size:cover>
+<body  background="./images/fondo2.jpg" style=background-size:cover>
    
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 		<div class="container-fluid">
@@ -91,7 +47,7 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <div id="login-form" class="form">
                             <h3 class="text-center text-info">Inicio de sesión</h3>o
                             <div class="form-group">
                                 <label for="useremail" class="text-info">E-mail:</label><br />
@@ -102,14 +58,14 @@
                                 <input type="text" name="password" id="password" class="form-control" required/>
                             </div>
                             <div class="form-group text-center">
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Ingresar" />                                
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Ingresar" onclick="validateUser()" />                                
                             </div>
                             <div class="form-group text-center">
                                 <label for="remember-me" class="text-info">
                                     <span>No tienes una cuenta? <a href="registro.html" class="text-info">Crea tu cuenta aqui</a></span>
                                 </label>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
