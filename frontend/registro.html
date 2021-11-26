@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/images/favicon.png" type= "image/x-icon">
-    <script type="text/javascript" src="js/registro.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/registro.js"></script>
     <link rel="stylesheet" href="css/registrar.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -39,19 +39,17 @@
 		</div>
 	  </nav>
 
-
-
-    <div id="login">
+        <div id="login">
         <h3 class="text-center text-white pt-5">OCHO BITS LTDA</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <div id="login-form" class="form">
                             <h3 class="text-center text-info">Crear Cuenta</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Nombre:</label><br />
-                                <input type="username" name="username" id="username" class="form-control" required/>
+                                <input type="text" name="username" id="username" class="form-control" required/>
                             </div>
                             <div class="form-group">
                                 <label for="useremail" class="text-info">E-mail:</label><br />
@@ -66,25 +64,26 @@
                                 <input type="text" name="passwordrepeat" id="passwordrepeat" class="form-control" required/>
                             </div>
                             <div class="form-group text-center">
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Crear" />                                
+                                <input id="inputData" type="submit" name="submit" class="btn btn-info btn-md" value="Crear" onclick="validateForm()"/>                                
                             </div>
                             <div class="form-group text-center">
                                 <label for="remember-me" class="text-info">
                                     <span>Ya tienes una cuenta? <a href="login.html" class="text-info">Inicia sesion aqui</a></span>
                                 </label>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="titulo"></h4>
+              <h4 class="modal-title" id="title-answer"></h4>
             </div>
             <div class="modal-footer">
               <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -92,8 +91,6 @@
           </div>
         </div>
     </div>
-</div>
 
 </body>
-
 </html>
