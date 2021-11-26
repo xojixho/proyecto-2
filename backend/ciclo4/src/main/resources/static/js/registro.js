@@ -2,6 +2,10 @@ $("#close").on("click", function () {
     $("#myModal").modal("hide");
 });
 
+/**
+ * validar formulario de registro
+ * @returns {void}
+ */
 function validateForm() {
     $("#title-answer").text("");
     $("#myModal").modal("hide");
@@ -20,6 +24,11 @@ function validateForm() {
         }
     }
 }
+
+/**
+ * registrar nuevo usuario
+ * @returns {void}
+ */
 function record() {
 
     $("#title-answer").text("");
@@ -54,6 +63,10 @@ function record() {
     });
 }
 
+/**
+ * Verificamos que el password coincida
+ * @returns {Boolean}
+ */
 function repeatedPassword() {
     var password = $("#password").val();
     var passwordRepeated = $("#passwordrepeat").val();
@@ -63,6 +76,10 @@ function repeatedPassword() {
         return false;
 }
 
+/**
+ * Validar que el usuario existe
+ * @returns {void}
+ */
 function existEmail() {
 
     $("#title-answer").text("");
@@ -103,10 +120,19 @@ function limpiarCampos() {
     $("#passwordrepeat").val("");
 }
 
+/**
+ * validar string vacia
+ * @param {type} field
+ * @returns {Boolean}
+ */
 function isEmpty(field) {
     return field === "";
 }
 
+/**
+ * Validar campos vacios
+ * @returns {Boolean}
+ */
 function checkFields() {
     let username = $("#username").val();
     let useremail = $("#useremail").val();

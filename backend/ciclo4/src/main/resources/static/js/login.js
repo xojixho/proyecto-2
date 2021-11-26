@@ -2,6 +2,10 @@ $('#close').on('click', function () {
     $('#myModal').modal('hide');
 });
 
+/**
+ * Iniciar sesion
+ * @returns {void}
+ */
 function iniciarSesion() {
     let correo = $('#useremail').val();
     let contraseña = $('#password').val();
@@ -26,15 +30,28 @@ function iniciarSesion() {
     });
 }
 
+/**
+ * Limpiar campos
+ * @returns {void}
+ */
 function limpiarCampos() {
     $("#useremail").val("");
     $("#password").val("");
 }
 
+/**
+ * validar string vacio
+ * @param {type} field
+ * @returns {Boolean}
+ */
 function isEmpty(field) {
     return field === "";
 }
 
+/**
+ * validar campos vacios en login
+ * @returns {Boolean}
+ */
 function checkFields() {
     let password = $("#password").val();
     let useremail = $("#useremail").val();
@@ -54,6 +71,10 @@ function checkFields() {
         return true;
 }
 
+/**
+ * verifiacar un usuario con cuenta
+ * @returns {void}
+ */
 function isUser() {
     var useremail = $("#useremail").val();
     var url = "http://129.151.121.31/api/user/" + useremail;
@@ -75,6 +96,10 @@ function isUser() {
     });
 }
 
+/**
+ * Metodo que valida y registra al usuario nuevo
+ * @returns {void}
+ */
 function validateUser() {
 
     if (checkFields()) {
