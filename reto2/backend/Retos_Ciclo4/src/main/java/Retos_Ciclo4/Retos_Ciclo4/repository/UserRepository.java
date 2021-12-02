@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Repository
 public class UserRepository {
+    
     @Autowired
     private UserInterface userInterface;
 
