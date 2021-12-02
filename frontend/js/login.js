@@ -9,7 +9,7 @@ $('#close').on('click', function () {
 function iniciarSesion() {
     let correo = $('#useremail').val();
     let contraseña = $('#password').val();
-    let url = 'http://129.151.121.31/api/user/' + correo + '/' + contraseña;
+    let url = 'http://localhost:8080/api/user/' + correo + '/' + contraseña;
     console.log(url);
     $.ajax({
         url: url,
@@ -23,8 +23,7 @@ function iniciarSesion() {
                         $('#titulo').text(`No existe el usuario`);
                         $('#myModal').modal('show');
                     } else {
-                        $('#titulo').text('Bienvenido ');
-                        $('#myModal').modal('show');
+                        window.location = "usuarios.html";
                     }           
         }
     });
@@ -77,7 +76,7 @@ function checkFields() {
  */
 function isUser() {
     var useremail = $("#useremail").val();
-    var url = "http://129.151.121.31/api/user/" + useremail;
+    var url = "http://127.0.0.1:8080/api/user/emailexist/" + useremail;
     $.ajax({
         url: url,
         async: true,
