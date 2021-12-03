@@ -19,15 +19,36 @@ function iniciarSesion() {
         success: function (answer) {
             console.log(answer.name);
             console.log(answer);
-                    if (answer.name === 'NO DEFINIDO') {
-                        $('#titulo').text(`No existe el usuario`);
-                        $('#myModal').modal('show');
-                    } else {
-                        window.location = "usuarios.html";
-                    }           
+            if (answer.id == null) {
+                $('#titulo').text(`No existe el usuario`);
+                $('#myModal').modal('show');
+            } else {
+                $('#titulo').text(`Bienvenido`);
+                $('#myModal').modal('show');
+                $('#close').hide();
+                irListarUsuarios();
+                //window.location = "usuarios.html";
+            }
         }
     });
 }
+
+function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            //resolve(x);
+            window.location = "usuarios.html";
+        }, 2000);
+    });
+}
+
+async function irListarUsuarios() {
+    var x = await resolveAfter2Seconds();
+
+    //console.log(x); // 10
+}
+
+
 
 /**
  * Limpiar campos
@@ -84,8 +105,8 @@ function isUser() {
         dataType: 'JSON',
         contentType: 'application/JSON',
         success: function (answer) {
-                console.log("user exist? " + answer);
-                iniciarSesion();
+            console.log("user exist? " + answer);
+            iniciarSesion();
         },
         error: function (error) {
             console.log(error);

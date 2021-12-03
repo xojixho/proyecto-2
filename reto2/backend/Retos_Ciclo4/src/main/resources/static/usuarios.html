@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>::Reto 1 Ciclo4 - Equipo 4::</title>
-	<link rel="shortcut icon" href="/images/favicon.png" type= "image/x-icon">
-    <link rel="stylesheet" href="/css/styles.css"/>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="./css/styles.css" />
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/usuarios.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<title>OCHO BITS - Usuarios</title>
 </head>
 
-<body background="/images/fondo1.jpg" style=background-size:cover> 
-	
+<body background="/images/fondo1.jpg" style=background-size:cover>
+
 	<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 		<div class="container-fluid">
-		  <a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
+			<a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64"
+					class="d-inline-block align-text-top"> </a>
 
-		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-                  
-		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav">
-			  <a class="nav-link" href="index.html">Inicio</a>
-			  <a class="nav-link active" aria-current="page" href= "index.html">Usuarios</a>
-			  <a class="nav-link" href="#">Catalogo</a>
-                          <!--
-			  <a class="nav-link disabled">MENSAJES</a>
-			  <a class="nav-link disabled">COMPRAS</a>
-			  <a class="nav-link disabled">CLIENTES</a>
-			  <a class="nav-link disabled">REPORTES</a>
-			  <a class="nav-link disabled">SCORE</a>
-                          -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" href="login.html">Logout</a>
+					<a class="nav-link active" aria-current="page" href="#">Usuarios</a>
+					<a class="nav-link" href="#">Catalogo</a>
+				</div>
 			</div>
-		  </div>
-                  
+
 		</div>
-	  </nav>
-	  
+	</nav>
 
+	<section>
+		<div class="conteiner">
+			<div id="nuevoUsuario" class="row justify-content-end">
+				<div class="btn col-3">
+					<a type="button" class="btn btn-info text-white" href="./registro-usuario.html">Nuevo
+						Usuario</button>
+					</a>
+				</div>
+			</div>
+			<h2 id="titulo" class="text-center text-white pt-3">Usuarios</h2>
+			<div id="contenido" class="row justify-content-center align-items-center">
+				<div class="col"></div>
+				<div class="col-10 table-responsive">
+					<table class="table table-light table-hover mx-auto w-auto">
+						<thead class="thead-dark">
+							<tr>
+								<th class="text-center" scope="col">Identificacion</th>
+								<th class="text-center" scope="col">Nombre</th>
+								<th class="text-center" scope="col">Dirección</th>
+								<th class="text-center" scope="col">Teléfono</th>
+								<th class="text-center" scope="col">email</th>
+								<th class="text-center" scope="col">Clave</th>
+								<th class="text-center" scope="col">Zona</th>
+								<th class="text-center" scope="col">Tipo</th>
+								<th class="text-center" scope="col" colspan="2">Acciones</th>
+							</tr>
+						</thead>
 
+						<tbody id="resultadoUsuarios">
+
+						</tbody>
+					</table>
+				</div>
+				<div class="col"></div>
+			</div>
+		</div>
+	</section>
 </body>
+
 </html>
+
+
