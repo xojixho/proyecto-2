@@ -12,7 +12,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="./js/registrar-usuarios.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	<title>OCHO BITS - Usuarios</title>
+	<title>OCHO BITS - Registro de Usuarios</title>
 </head>
 
 <body background="/images/fondo1.jpg" style=background-size:cover>
@@ -50,11 +50,11 @@
 
 							<div class="form-group">
 								<label for="id" class="text-info">Id:</label><br />
-								<input type="text" name="id" id="id" class="form-control" required />
+								<input type="number" name="id" id="id" class="form-control" required />
 							</div>
 							<div class="form-group">
 								<label for="identificacion" class="text-info">Identificacion:</label><br />
-								<input type="text" name="identificacion" id="identificacion" class="form-control"
+								<input type="number" name="identificacion" id="identificacion" class="form-control"
 									required />
 							</div>
 							<div class="form-group">
@@ -78,7 +78,7 @@
 							</div>
 							<div class="form-group">
 								<label for="email" class="text-info">Email:</label><br />
-								<input type="text" name="email" id="email" class="form-control" required />
+								<input type="email" name="email" id="email" class="form-control" required />
 							</div>
 
 						</div>
@@ -129,7 +129,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="title-answer"></h4>
+					<h4 class="modal-title" id="tituloRegistro"></h4>
 				</div>
 				<div class="modal-footer">
 					<button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
