@@ -1,32 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="./images/fondo1.jpg" as="image">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>OCHO BITS - Catalogo</title>
 </head>
-<body>
-    <article id="tab2">
-        <h2>CATÁLOGO</h2>
-        <div>
-            <label for="name">Nombre:</label>
-            <input type="text" id="Oname" placeholder="Nombre" required>
-            <label for="name">Marca:</label>
-            <input type="text" id="Obrand" placeholder="Marca" required>
-            <label for="name">Modelo:</label>
-            <input type="number" id="Oyear" placeholder="Modelo" required>
-            <label for="name">Descripcion:</label>
-            <input type="text" id="Odescription" placeholder="Descripcion" required>
-            <label>Selecciona la Categoría: </label>
-            <select id="select-category"></select>
-            <button onclick="guardarInfoCatalogo()">Guardar Catalogo</button>
-        </div>
-        <div id="resultado2"></div>
-        <script type="text/javascript">
-            window.onload = autoInicioOrtopedic();
-        </script>
-        <div>
-    </article>
+
+<body background="/images/fondo1.jpg" style=background-size:cover>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64"
+                        class="d-inline-block align-text-top"> </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="login.html">Logout</a>
+                        <a class="nav-link" href="usuarios.html">Usuarios</a>
+                        <a class="nav-link active" aria-current="page" href="#">Catalogo</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <section>
+            <div id="nuevoUsuario" class="row justify-content-end">
+                <div class="btn col-3">
+                    <a type="button" class="btn btn-info text-white" href="./registro-producto.html">
+                        Nuevo</button>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2 id="titulo" class="text-center text-white pt-3">Catalogo</h2>
+            </div>
+            <br><br>
+            <div id="productos">
+                <!-- contenido productos -->
+            </div>
+            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="tituloUsuario"></h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="close" type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
 </body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/catalogo.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+
 </html>

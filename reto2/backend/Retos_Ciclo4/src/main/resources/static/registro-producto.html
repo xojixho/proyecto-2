@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="./images/fondo1.jpg" as="image">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>OCHO BITS - Catalogo</title>
+</head>
+
+<body background="/images/fondo1.jpg" style=background-size:cover>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64"
+                        class="d-inline-block align-text-top"> </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="login.html">Logout</a>
+                        <a class="nav-link" href="usuarios.html">Usuarios</a>
+                        <a class="nav-link active" aria-current="page" href="catalogo.html">Catalogo</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <section>
+            <div>
+                <h2 id="titulo" class="text-center text-white pt-3">Registrar Producto</h2>
+            </div>
+            <br><br>
+            <div id="form-nuevo-prod" class="row justify-content-center">
+                <!-- formulario nuevo producto -->
+                <div class="card" style="background-color:#eeeee8; width: 36rem; padding: 10px;">
+
+                    <form style="margin: 10px;">
+                        <!-- Id -->
+                        <div class="form-group">
+                                <label for="id" style="padding: 2px; margin-right:3px">Id: </label>
+                                <input type="number" class="form-control col-md-4" id="id" placeholder="Ingrese el id">
+                        </div>
+                        <!-- descripcion y marca -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="descripcion">Descripcion:</label>
+                                <input type="text" class="form-control" id="descripcion" placeholder="Descripcion">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="marca">Marca:</label>
+                                <select name="marca" id="marca" class="form-control" >
+                                    <option selected>Elegir</option>
+                                    <option value="HP">HP</option>
+                                    <option value="Huawei">Huawei</option>
+                                    <option value="Asus">Asus</option>
+                                    <option value="Lenovo">Lenovo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- modelo y sistema operativo -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="modelo">Modelo:</label>
+                                <input type="text" class="form-control" id="modelo" placeholder="Modelo">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="so">SO:</label>
+                                <select name="so" id="so" class="form-control" >
+                                    <option selected>Elegir</option>
+                                    <option value="Win10 Home">Win10 Home</option>
+                                    <option value="Win10 Pro">Win10 Pro</option>
+                                    <option value="Ubuntu">Ubuntu 18.9.8</option>
+                                    <option value="Win11">Win11</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- procesador y memoria -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="procesador">Procesador:</label>
+                                <input type="text" class="form-control" id="procesador" placeholder="Procesador">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="memoria">Memoria:</label>
+                                <select name="memoria" id="memoria" class="form-control" >
+                                    <option selected>Elegir</option>
+                                    <option value="4GB">4GB</option>
+                                    <option value="16GB">16GB</option>
+                                    <option value="32GB">32GB</option>
+                                    <option value="64GB">64GB</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- disco duro y cantidad -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="disco">Disco Duro:</label>
+                                <input type="text" class="form-control" id="disco" placeholder="Disco duro">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="cantidad">Cantidad:</label>
+                                <input type="number" class="form-control" name="cantidad" id="cantidad" placeholder="Cantidad">
+                            </div>
+                        </div>
+
+                        <!-- imagen -->
+                        <div class="form-group">
+                            <label for="imagen" style="padding: 2px; margin-right:3px">Imagen: </label>
+                            <input type="text" class="form-control col-md-4" id="imagen" placeholder="URL">
+                    </div>
+
+                    <div class="row justify-content-center" style="margin:10px;">
+                        <div class="col-sm-3">
+                            <button type="submit" class="btn btn-block btn-success" >Crear</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="submit" class="btn btn-block btn-danger">Cancelar</button>
+                        </div>
+                        
+                    </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="tituloUsuario"></h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="close" type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/registrar-productos.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+
+</html>
