@@ -14,7 +14,7 @@ function validateForm() {
         if (!existEmail()) {
             record();
         } else {
-            $('#tituloRegistro').text(`error contraseña`);
+            $('#tituloRegistro').text(`error`);
             $('#userRegModal').modal('show');
         }
     }
