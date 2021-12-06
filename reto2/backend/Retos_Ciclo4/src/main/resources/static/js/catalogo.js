@@ -5,7 +5,7 @@ $(document).ready(function () {
 function listarProductos() {
     $.ajax({
         async:"true",
-        url: "http://localhost:8080/api/laptop/all",
+        url: "http://129.151.121.31/api/laptop/all",
         type: "GET",
         dataType: "JSON",
         success: function (respuesta) {
@@ -48,7 +48,7 @@ function formularioEditarProducto(producto) {
     $("#titulo").html("Editar Producto");
 
     $.ajax({
-        url: "http://localhost:8080/api/laptop/all",
+        url: "http://129.151.121.31/api/laptop/all",
         type: "GET",
         dataType: "JSON",
         success: function (respuesta) {
@@ -204,7 +204,7 @@ function formularioEditarProducto(producto) {
     };
 
     $.ajax({
-        url: "http://localhost:8080/api/laptop/update",
+        url: "http://129.151.121.31/api/laptop/update",
         async: true,
         type: "PUT",
         dataType: "JSON",
@@ -334,7 +334,7 @@ function checkFields() {
 
     let = datoBorrar = JSON.stringify(datos);
     $.ajax({
-        url: "http://localhost:8080/api/laptop/"+codigo,
+        url: "http://129.151.121.31/api/laptop/"+codigo,
         data: datoBorrar,
         type: "DELETE",
         contentType: "application/JSON",
