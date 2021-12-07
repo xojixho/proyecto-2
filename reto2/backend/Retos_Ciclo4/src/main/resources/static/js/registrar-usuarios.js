@@ -43,7 +43,7 @@ function record() {
     };
 
     $.ajax({
-        url: "http://localhost:8080/api/user/new",
+        url: "http://129.151.121.31/api/user/new",
         async: true,
         type: "POST",
         dataType: "JSON",
@@ -72,7 +72,7 @@ function existEmail() {
     $("#userRegModal").modal("hide");
 
     var email = $("#email").val();
-    var url = "http://localhost:8080/api/user/emailexist/" + email;
+    var url = "http://129.151.121.31/api/user/emailexist/" + email;
     $.ajax({
         url: url,
         async: true,

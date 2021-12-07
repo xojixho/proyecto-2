@@ -43,7 +43,7 @@ function validateForm() {
     };
 
     $.ajax({
-        url: "http://localhost:8080/api/laptop/new",
+        url: "http://129.151.121.31/api/laptop/new",
         async: true,
         type: "POST",
         dataType: "JSON",

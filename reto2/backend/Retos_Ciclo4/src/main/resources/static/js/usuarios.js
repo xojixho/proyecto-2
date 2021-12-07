@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 function listarUsuarios() {
     $.ajax({
-        url: "http://localhost:8080/api/user/all",
+        url: "http://129.151.121.31/api/user/all",
         type: "GET",
         dataType: "JSON",
         success: function (respuesta) {
@@ -127,7 +127,7 @@ function formularioEditarUsuario(usuario){
     );
 
     $.ajax({
-        url: "http://localhost:8080/api/user/"+usuario,
+        url: "http://129.151.121.31/api/user/"+usuario,
         type: "GET",
         dataType: "JSON",
         success: function (respuesta) {
@@ -255,7 +255,7 @@ function updateUser() {
     };
 
     $.ajax({
-        url: "http://localhost:8080/api/user/update",
+        url: "http://129.151.121.31/api/user/update",
         async: true,
         type: "PUT",
         dataType: "JSON",
@@ -304,7 +304,7 @@ function borrarUsuario(codigo) {
 
     let = datoBorrar = JSON.stringify(datos);
     $.ajax({
-        url: "http://localhost:8080/api/user/"+codigo,
+        url: "http://129.151.121.31/api/user/"+codigo,
         data: datoBorrar,
         type: "DELETE",
         contentType: "application/JSON",
