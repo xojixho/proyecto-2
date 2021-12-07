@@ -11,28 +11,57 @@
 	<title>OCHO BITS - Usuarios</title>
 </head>
 
-<body background="/images/fondo1.jpg" style=background-size:cover>
-
-	<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64"
-					class="d-inline-block align-text-top"> </a>
-
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-link" href="login.html">Logout</a>
-					<a class="nav-link active" aria-current="page" href="usuarios.html">Usuarios</a>
-					<a class="nav-link" href="catalogo.html">Catalogo</a>
-				</div>
-			</div>
-
-		</div>
-	</nav>
+<!-- inicio de cuerpo -->
+<body  background="./images/fondo5.jpg" style=background-size:cover>
+	<!-- encabezado del menú -->
+   <header class="header">
+		 <div class="container-fluid">
+	   <!-- LOGO -->
+		   <nav class="navbar navbar-expand-lg navbar-dark bg-opacity-75">
+			   <a class="navbar-brand" href="index.html"> <img src="./images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
+ <!-- BOTÓN RESPONSIVE DEL MENÚ -->
+			   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+				 <span class="navbar-toggler-icon"></span>
+			   </button>
+			   <div class="collapse navbar-collapse" id="navbarScroll">
+				 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" id="menu"     style="--bs-scroll-height: 100px;">
+				   <li class="nav-item">
+					 <!-- HOME -->
+					 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+				   </li>
+				   <!-- CATALOGO -->
+				   <li class="nav-item">
+					 <a class="nav-link" href="catalogo.html">Catálogo</a>
+				   </li>
+				   <!-- REGISTRO -->
+				   <li class="nav-item">
+					 <a class="nav-link" href="registro.html">Registro</a>
+				   </li>
+				   <li class="nav-item">
+					 <a class="nav-link" href="registro-usuario.html">Registro Usuario</a>
+				   </li>
+				   <!-- LOGIN-->
+				   <li class="nav-item dropdown">
+					 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					   Login
+					 </a>
+					 <ul class="dropdown-menu" id="menu" aria-labelledby="navbarScrollingDropdown">
+					   <li><a class="dropdown-item" href="login.html">Cliente</a></li>
+					   <li><a class="dropdown-item" href="loginusuarios.html">Usuario</a></li>
+					   <li><hr class="dropdown-divider"></li>
+					   <li><a class="dropdown-item" href="loginadmin.html">Admin</a></li>
+					 </ul>
+				   </li>
+				 </ul>
+				 <form class="d-flex">
+				   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				   <button class="btn btn-primary" type="submit">Search</button>
+				 </form>
+			   </div>
+			 </div>
+		   </nav>
+		   
+   </header>
 
 	<section>
 		<div class="conteiner">

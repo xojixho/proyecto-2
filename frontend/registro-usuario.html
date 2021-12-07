@@ -7,54 +7,83 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="preload" href="./images/fondo1.jpg" as="image">
 	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-	<link rel="stylesheet" href="./css/styles.css" />
+	<link rel="stylesheet" href="./css/styleregistusu.css" />
 	<title>OCHO BITS - Registro de Usuarios</title>
 </head>
 
-<body background="/images/fondo1.jpg" style=background-size:cover>
-
-	<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64"
-					class="d-inline-block align-text-top"> </a>
-
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-link" href="login.html">Salir</a>
-					<a class="nav-link active" aria-current="page" href="usuarios.html">Usuarios</a>
-					<a class="nav-link" href="catalogo.html">Catalogo</a>
-				</div>
-			</div>
-
-		</div>
-	</nav>
+<!-- inicio de cuerpo -->
+<body  background="./images/fondo5.jpg" style=background-size:cover>
+	<!-- encabezado del menú -->
+   <header class="header">
+		 <div class="container-fluid">
+	   <!-- LOGO -->
+		   <nav class="navbar navbar-expand-lg navbar-dark bg-opacity-75">
+			   <a class="navbar-brand" href="index.html"> <img src="./images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
+ <!-- BOTÓN RESPONSIVE DEL MENÚ -->
+			   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+				 <span class="navbar-toggler-icon"></span>
+			   </button>
+			   <div class="collapse navbar-collapse" id="navbarScroll">
+				 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" id="menu"     style="--bs-scroll-height: 100px;">
+				   <li class="nav-item">
+					 <!-- HOME -->
+					 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+				   </li>
+				   <!-- CATALOGO -->
+				   <li class="nav-item">
+					 <a class="nav-link" href="catalogo.html">Catálogo</a>
+				   </li>
+				   <!-- REGISTRO -->
+				   <li class="nav-item">
+					 <a class="nav-link" href="registro.html">Registro</a>
+				   </li>
+				   <li class="nav-item">
+					 <a class="nav-link" href="registro-usuario.html">Registro Usuario</a>
+				   </li>
+				   <!-- LOGIN-->
+				   <li class="nav-item dropdown">
+					 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					   Login
+					 </a>
+					 <ul class="dropdown-menu" id="menu" aria-labelledby="navbarScrollingDropdown">
+					   <li><a class="dropdown-item" href="login.html">Cliente</a></li>
+					   <li><a class="dropdown-item" href="loginusuarios.html">Usuario</a></li>
+					   <li><hr class="dropdown-divider"></li>
+					   <li><a class="dropdown-item" href="loginadmin.html">Admin</a></li>
+					 </ul>
+				   </li>
+				 </ul>
+				 <form class="d-flex">
+				   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				   <button class="btn btn-primary" type="submit">Search</button>
+				 </form>
+			   </div>
+			 </div>
+		   </nav>
+		   
+   </header>
 
 	<section>
 		<div id="registro-usuario">
 			<h3 class="text-center text-white">OCHO BITS LTDA</h3>
 			<div class="container">
-				<h3 class="text-center text-info">Crear Cuenta</h3>
+				<h3 class="text-center text-info" id="titule">Crear Cuenta</h3>
 				<br>
 				<div class="row justify-content-center align-items-center">
 					<div class="col">
 						<div id="registro-form" class="form">
 
 							<div class="form-group">
-								<label for="id" class="text-info">Id:</label><br />
+								<label for="id" class="text-info" id="text-info">Id:</label><br />
 								<input type="number" name="id" id="id" class="form-control" required />
 							</div>
 							<div class="form-group">
-								<label for="identificacion" class="text-info">Identificacion:</label><br />
+								<label for="identificacion" class="text-info" id="text-info">Identificacion:</label><br />
 								<input type="number" name="identificacion" id="identificacion" class="form-control"
 									required />
 							</div>
 							<div class="form-group">
-								<label for="nombre" class="text-info">Nombre:</label><br />
+								<label for="nombre" class="text-info" id="text-info">Nombre:</label><br />
 								<input type="email" name="nombre" id="nombre" class="form-control" required />
 							</div>
 
@@ -65,15 +94,15 @@
 
 						<div class="form-group">
 							<div class="form-group">
-								<label for="direccion" class="text-info">Direccion:</label><br />
+								<label for="direccion" class="text-info" id="text-info">Direccion:</label><br />
 								<input type="text" name="direccion" id="direccion" class="form-control" required />
 							</div>
 							<div class="form-group">
-								<label for="telefono" class="text-info">Teléfono:</label><br />
+								<label for="telefono" class="text-info" id="text-info">Teléfono:</label><br />
 								<input type="text" name="telefono" id="telefono" class="form-control" required />
 							</div>
 							<div class="form-group">
-								<label for="email" class="text-info">Email:</label><br />
+								<label for="email" class="text-info" id="text-info">Email:</label><br />
 								<input type="email" name="email" id="email" class="form-control" required />
 							</div>
 
@@ -82,11 +111,11 @@
 					<div class="col">
 						<div class="form-group">
 							<div class="form-group">
-								<label for="clave" class="text-info">Clave:</label><br />
+								<label for="clave" class="text-info" id="text-info">Clave:</label><br />
 								<input type="text" name="clave" id="clave" class="form-control" required />
 							</div>
 							<div class="form-group">
-								<label for="zonas" class="text-info input-group-addon">Zona:</label><br />
+								<label for="zonas" class="text-info input-group-addon" id="text-info">Zona:</label><br />
 								<select id="zona" name="zonas" class="form-control" required>
 
 									<option value="NO DEFINIDO">SELECCIONA</option>
@@ -101,7 +130,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="tipos" class="text-info input-group-addon">Tipo:</label><br />
+								<label for="tipos" class="text-info input-group-addon" id="text-info">Tipo:</label><br />
 								<select id="tipo" name="tipos" class="form-control" required>
 
 									<option value="NO DEFINIDO">SELECCIONA</option>
