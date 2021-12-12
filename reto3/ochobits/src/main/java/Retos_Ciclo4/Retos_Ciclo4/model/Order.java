@@ -1,5 +1,6 @@
 package Retos_Ciclo4.Retos_Ciclo4.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import lombok.AllArgsConstructor;
@@ -12,11 +13,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author grupo desarrollo
  */
-@Document(collection = "orders")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+@Document(collection = "orders")
+public class Order implements Serializable {
     public static String PENDING = "Pendiente";
     public static String APROVED = "Aprovada";
     public static String REJECTED = "Rechazada";

@@ -1,17 +1,16 @@
 package Retos_Ciclo4.Retos_Ciclo4.model;
 
+import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serializable;
-
-@Document(collection = "laptops")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Document(collection = "laptops")
 public class Laptop implements Serializable {
     @Id
     private Integer id;

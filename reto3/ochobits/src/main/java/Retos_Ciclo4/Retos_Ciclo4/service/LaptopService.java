@@ -2,11 +2,10 @@ package Retos_Ciclo4.Retos_Ciclo4.service;
 
 import Retos_Ciclo4.Retos_Ciclo4.model.Laptop;
 import Retos_Ciclo4.Retos_Ciclo4.repository.LaptopRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class LaptopService {

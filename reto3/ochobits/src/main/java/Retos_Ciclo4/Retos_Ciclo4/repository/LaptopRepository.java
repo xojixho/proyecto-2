@@ -34,6 +34,6 @@ public class LaptopRepository {
     }
     
     public List<Laptop> productByPrice(double precio){
-        return laptopInterface.findByPriceLeesThanEqual(precio);
+        return laptopInterface.findByPriceLessThanEqual(precio);
     }
 }
