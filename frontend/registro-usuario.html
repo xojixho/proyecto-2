@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preload" href="./images/fondo1.jpg" as="image">
+	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="./css/styleregistusu.css" />
+	<title>OCHO BITS - Registro de Usuarios</title>
+</head>
+
+<!-- inicio de cuerpo -->
+<body  background="./images/fondo5.jpg" style=background-size:cover>
+	<!-- encabezado del menú -->
+   <header class="header">
+		 <div class="container-fluid">
+	   <!-- LOGO -->
+		   <nav class="navbar navbar-expand-lg navbar-dark bg-opacity-75">
+			   <a class="navbar-brand" href="index.html"> <img src="./images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
+ <!-- BOTÓN RESPONSIVE DEL MENÚ -->
+			   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+				 <span class="navbar-toggler-icon"></span>
+			   </button>
+			   <div class="collapse navbar-collapse" id="navbarScroll">
+				 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" id="menu"     style="--bs-scroll-height: 100px;">
+				   <li class="nav-item">
+					 <!-- HOME -->
+					 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+				   </li>
+				   <!-- CATALOGO -->
+				   <li class="nav-item">
+					 <a class="nav-link" href="catalogo.html">Catálogo</a>
+				   </li>
+				   <!-- REGISTRO -->
+				   <li class="nav-item">
+					 <a class="nav-link" href="registro.html">Registro</a>
+				   </li>
+				   <li class="nav-item">
+					 <a class="nav-link" href="registro-usuario.html">Registro Usuario</a>
+				   </li>
+				   <!-- LOGIN-->
+				   <li class="nav-item dropdown">
+					 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					   Login
+					 </a>
+					 <ul class="dropdown-menu" id="menu" aria-labelledby="navbarScrollingDropdown">
+					   <li><a class="dropdown-item" href="login.html">Cliente</a></li>
+					   <li><a class="dropdown-item" href="loginusuarios.html">Usuario</a></li>
+					   <li><hr class="dropdown-divider"></li>
+					   <li><a class="dropdown-item" href="loginadmin.html">Admin</a></li>
+					 </ul>
+				   </li>
+				 </ul>
+				 <form class="d-flex">
+				   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				   <button class="btn btn-primary" type="submit">Search</button>
+				 </form>
+			   </div>
+			 </div>
+		   </nav>
+		   
+   </header>
+
+	<section>
+		<div id="registro-usuario">
+			<h3 class="text-center text-white">OCHO BITS LTDA</h3>
+			<div class="container">
+				<h3 class="text-center text-info" id="titule">Crear Cuenta</h3>
+				<br>
+				<div class="row justify-content-center align-items-center">
+					<div class="col">
+						<div id="registro-form" class="form">
+
+							<div class="form-group">
+								<label for="id" class="text-info" id="text-info">Id:</label><br />
+								<input type="number" name="id" id="id" class="form-control" required />
+							</div>
+							<div class="form-group">
+								<label for="identificacion" class="text-info" id="text-info">Identificacion:</label><br />
+								<input type="number" name="identificacion" id="identificacion" class="form-control"
+									required />
+							</div>
+							<div class="form-group">
+								<label for="nombre" class="text-info" id="text-info">Nombre:</label><br />
+								<input type="email" name="nombre" id="nombre" class="form-control" required />
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col">
+
+						<div class="form-group">
+							<div class="form-group">
+								<label for="direccion" class="text-info" id="text-info">Direccion:</label><br />
+								<input type="text" name="direccion" id="direccion" class="form-control" required />
+							</div>
+							<div class="form-group">
+								<label for="telefono" class="text-info" id="text-info">Teléfono:</label><br />
+								<input type="text" name="telefono" id="telefono" class="form-control" required />
+							</div>
+							<div class="form-group">
+								<label for="email" class="text-info" id="text-info">Email:</label><br />
+								<input type="email" name="email" id="email" class="form-control" required />
+							</div>
+
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							<div class="form-group">
+								<label for="clave" class="text-info" id="text-info">Clave:</label><br />
+								<input type="text" name="clave" id="clave" class="form-control" required />
+							</div>
+							<div class="form-group">
+								<label for="zonas" class="text-info input-group-addon" id="text-info">Zona:</label><br />
+								<select id="zona" name="zonas" class="form-control" required>
+
+									<option value="NO DEFINIDO">SELECCIONA</option>
+									<option value="ZONA 1">ZONA 1 - LAURELES</option>
+									<option value="ZONA 2">ZONA 2 - EL POBLADO</option>
+									<option value="ZONA 3">ZONA 3 - ROBLEDO</option>
+									<option value="ZONA 4">ZONA 4 - BELÉN</option>
+									<option value="ZONA 5">ZONA 5 - LA AMÉRICA</option>
+									<option value="ZONA 6">ZONA 6 - BUENOS AIRES</option>
+									<option value="ZONA 7">ZONA 7 - CANDELARIA</option>
+									<option value="ZONA 8">ZONA 8 - ARANJUEZ</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="tipos" class="text-info input-group-addon" id="text-info">Tipo:</label><br />
+								<select id="tipo" name="tipos" class="form-control" required>
+
+									<option value="NO DEFINIDO">SELECCIONA</option>
+									<option value="COORD">COORDINADOR ZONA</option>
+									<option value="AC">ASESOR COMERCIAL</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="form-group text-center">
+					<input id="inputData" type="submit" name="submit" class="btn btn-info btn-md" value="Crear"
+						onclick="validateForm()" />
+				</div>
+
+			</div>
+	</section>
+
+	<div class="modal fade" id="userRegModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="tituloRegistro"></h4>
+				</div>
+				<div class="modal-footer">
+					<button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/registrar-usuarios.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</html>

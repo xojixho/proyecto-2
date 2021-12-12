@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="./images/fondo2.jpg" as="image">
+    <link rel="shortcut icon" href="./images/favicon.png" type= "image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <title>OCHO BITS Acceso al Sistema</title>
+</head>
+
+<body  background="./images/fondo2.jpg" style=background-size:cover>
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="#"> <img src="/images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
+
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+                  
+		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+			  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+			</div>
+		  </div>
+                  
+		</div>
+	  </nav>
+
+
+
+    <div id="login">
+        <h3 class="text-center text-white pt-5">OCHO BITS LTDA</h3>
+        <div class="container-fluid">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" method="post" name="loginForm">
+                            <h3 class="text-center text-info">Inicio de sesión</h3>
+                            <div class="form-group">
+                                <label for="useremail" class="text-info">E-mail:</label><br />
+                                <input type="email" name="useremail" id="useremail" class="form-control" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Contraseña:</label><br />
+                                <input type="text" name="password" id="password" class="form-control" required/>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="button" name="submit" class="btn btn-info btn-md" value="Ingresar" onclick="validateUser()" />                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="titulo"></h4>
+            </div>
+            <div class="modal-footer">
+              <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/login.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+
+</html>

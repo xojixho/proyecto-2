@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preload" href="./images/fondo1.jpg" as="image">
+	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="./css/styles.css" />
+	<title>OCHO BITS - Usuarios</title>
+</head>
+
+<!-- inicio de cuerpo -->
+<body  background="./images/fondo5.jpg" style=background-size:cover>
+	<!-- encabezado del menú -->
+   <header class="header">
+		 <div class="container-fluid">
+	   <!-- LOGO -->
+		   <nav class="navbar navbar-expand-lg navbar-dark bg-opacity-75">
+			   <a class="navbar-brand" href="index.html"> <img src="./images/logo.png" alt="" width="70" height="64" class="d-inline-block align-text-top"> </a>
+ <!-- BOTÓN RESPONSIVE DEL MENÚ -->
+			   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+				 <span class="navbar-toggler-icon"></span>
+			   </button>
+			   <div class="collapse navbar-collapse" id="navbarScroll">
+				 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" id="menu"     style="--bs-scroll-height: 100px;">
+				   <li class="nav-item">
+					 <!-- HOME -->
+					 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+				   </li>
+				   <!-- CATALOGO -->
+				   <li class="nav-item">
+					 <a class="nav-link" href="catalogo.html">Catálogo</a>
+				   </li>
+				   <!-- REGISTRO -->
+				   <li class="nav-item">
+					 <a class="nav-link" href="registro.html">Registro</a>
+				   </li>
+				   <li class="nav-item">
+					 <a class="nav-link" href="registro-usuario.html">Registro Usuario</a>
+				   </li>
+				   <!-- LOGIN-->
+				   <li class="nav-item dropdown">
+					 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					   Login
+					 </a>
+					 <ul class="dropdown-menu" id="menu" aria-labelledby="navbarScrollingDropdown">
+					   <li><a class="dropdown-item" href="login.html">Cliente</a></li>
+					   <li><a class="dropdown-item" href="loginusuarios.html">Usuario</a></li>
+					   <li><hr class="dropdown-divider"></li>
+					   <li><a class="dropdown-item" href="loginadmin.html">Admin</a></li>
+					 </ul>
+				   </li>
+				 </ul>
+				 <form class="d-flex">
+				   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				   <button class="btn btn-primary" type="submit">Search</button>
+				 </form>
+			   </div>
+			 </div>
+		   </nav>
+		   
+   </header>
+
+	<section>
+		<div class="conteiner">
+			<div id="nuevoUsuario" class="row justify-content-end">
+				<div class="btn col-3">
+					<a type="button" class="btn btn-info text-white" href="./registro-usuario.html">Nuevo
+						Usuario</button>
+					</a>
+				</div>
+			</div>
+			<h2 id="titulo" class="text-center text-white pt-3">Usuarios</h2>
+			<div id="contenido" class="row justify-content-center align-items-center">
+				<div class="col"></div>
+				<div class="col-10 table-responsive">
+					<table class="table table-light table-hover mx-auto w-auto">
+						<thead class="thead-dark">
+							<tr>
+								<th class="text-center" scope="col">Identificacion</th>
+								<th class="text-center" scope="col">Nombre</th>
+								<th class="text-center" scope="col">Dirección</th>
+								<th class="text-center" scope="col">Teléfono</th>
+								<th class="text-center" scope="col">email</th>
+								<th class="text-center" scope="col">Clave</th>
+								<th class="text-center" scope="col">Zona</th>
+								<th class="text-center" scope="col">Tipo</th>
+								<th class="text-center" scope="col" colspan="2">Acciones</th>
+							</tr>
+						</thead>
+
+						<tbody id="resultadoUsuarios">
+
+						</tbody>
+					</table>
+				</div>
+				<div class="col"></div>
+			</div>
+		</div>
+	</section>
+
+	<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="tituloUsuario"></h4>
+				</div>
+				<div class="modal-footer">
+					<button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/usuarios.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</html>
