@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/user")
 @CrossOrigin("*")
 public class UserController {
-    @Autowired
     /**
      * servicio
      */
+    @Autowired
     private UserService userService;
 
     /**

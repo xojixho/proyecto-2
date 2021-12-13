@@ -9,8 +9,8 @@ $('#close').on('click', function () {
 function iniciarSesion() {
     let correo = $('#useremail').val();
     let contraseña = $('#password').val();
-    let url = 'http://129.151.121.31/api/user/' + correo + '/' + contraseña;
-    console.log(url);
+    let url = 'http://127.0.0.1:8080/api/user/' + correo + '/' + contraseña;
+
     $.ajax({
         url: url,
         type: 'GET',
@@ -23,27 +23,49 @@ function iniciarSesion() {
                 $('#titulo').text(`No existe el usuario`);
                 $('#myModal').modal('show');
             } else {
-                $('#titulo').text(`Bienvenido`);
-                $('#myModal').modal('show');
-                $('#close').hide();
-                irListarUsuarios();
-                //window.location = "usuarios.html";
+                irAlMenu(answer);
             }
+        },
+        error: function (xhr, status) {
+            $('#titulo').text("Ocurrio un problema al ejecutar la petición..." + status);
+            $('#myModal').modal('show');
         }
     });
 }
 
-function resolveAfter2Seconds() {
+function resolveAfter2Seconds(input) {
     return new Promise(resolve => {
         setTimeout(() => {
             //resolve(x);
-            window.location = "usuarios.html";
+            let user = JSON.stringify(input);
+            sessionStorage.setItem("user", user);
+            location.href = "menu.html";
+
         }, 2000);
     });
 }
 
-async function irListarUsuarios() {
-    var x = await resolveAfter2Seconds();
+async function irAlMenu(data) {
+
+    let userData = {
+        id: data.id,
+        identification: data.identification,
+        name: data.name,
+        birthtDay: data.birthtDay,
+        monthBirthtDay: data.monthBirthtDay,
+        address: data.address,
+        cellPhone: data.cellPhone,
+        email: data.email,
+        password: data.password,
+        zone: data.zone,
+        type: data.type
+    };
+
+    $('#titulo').text(`Bienvenido ` + userData.name);
+    $('#myModal').modal('show');
+    $('#close').hide();
+
+    var x = await resolveAfter2Seconds(userData);
 
     //console.log(x); // 10
 }
@@ -57,15 +79,6 @@ async function irListarUsuarios() {
 function limpiarCampos() {
     $("#useremail").val("");
     $("#password").val("");
-}
-
-/**
- * validar string vacio
- * @param {type} field
- * @returns {Boolean}
- */
-function isEmpty(field) {
-    return field === "";
 }
 
 /**
@@ -97,7 +110,7 @@ function checkFields() {
  */
 function isUser() {
     var useremail = $("#useremail").val();
-    var url = "http://129.151.121.31/api/user/emailexist/" + useremail;
+    var url = "http://127.0.0.1:8080/api/user/emailexist/" + useremail;
     $.ajax({
         url: url,
         async: true,
@@ -110,7 +123,7 @@ function isUser() {
         },
         error: function (error) {
             console.log(error);
-            $("#titulo").text("Error");
+            $("#titulo").text("Error validacion");
             $("#myModal").modal("show");
         }
     });
