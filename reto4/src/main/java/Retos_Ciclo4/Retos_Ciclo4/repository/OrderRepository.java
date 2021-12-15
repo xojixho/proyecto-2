@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
-import Retos_Ciclo4.Retos_Ciclo4.crud.InterfaceOrder;
+import Retos_Ciclo4.Retos_Ciclo4.crud.OrderInterface;
 import Retos_Ciclo4.Retos_Ciclo4.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -23,37 +23,37 @@ import org.springframework.stereotype.Repository;
 public class OrderRepository {
     
     @Autowired
-    private InterfaceOrder interfaceOrder;
+    private OrderInterface orderInterface;
     
     @Autowired
     private MongoTemplate mongoTemplate;
 
     public List<Order> getAll() {
-        return (List<Order>) interfaceOrder.findAll();
+        return (List<Order>) orderInterface.findAll();
     }
 
     public Optional<Order> getOrder(int id) {
-        return interfaceOrder.findById(id);
+        return orderInterface.findById(id);
     }
 
     public Order create(Order order) {
-        return interfaceOrder.save(order);
+        return orderInterface.save(order);
     }
 
     public void update(Order order) {
-        interfaceOrder.save(order);
+        orderInterface.save(order);
     }
 
     public void delete(Order order) {
-        interfaceOrder.delete(order);
+        orderInterface.delete(order);
     }
     
     public Optional<Order> lastUserId(){
-        return interfaceOrder.findTopByOrderByIdDesc();
+        return orderInterface.findTopByOrderByIdDesc();
     }
     
     public List<Order> findByZone(String zona) {
-        return interfaceOrder.findByZone(zona);
+        return orderInterface.findByZone(zona);
     }
     
     //Reto 4: Ordenes de un asesor
