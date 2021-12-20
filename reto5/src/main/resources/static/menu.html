@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://kit.fontawesome.com/1543a11290.js" crossorigin="anonymous"></script>
+	<link rel="preload" href="./images/fondo1.jpg" as="image">
+	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="./css/styles.css" />
+	<title>OCHO BITS - Usuarios</title>
+</head>
+
+<body background="/images/fondo1.jpg" style="background-size:cover; height: auto;">
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"> <img src="./images/logo.png" alt="" width="70" height="64"
+					class="d-inline-block align-text-top"> </a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a id="cerrarSesion" class="nav-link" href="#">Logout</a>
+					<a class="nav-link active" aria-current="page" href="usuarios.html">Usuarios</a>
+					<a class="nav-link" href="catalogo.html">Catalogo</a>
+				</div>
+			</div>
+
+		</div>
+	</nav>
+
+	<section>
+		<div class="conteiner-fluid" style="margin: 50px;">
+			<div class="row">
+				<!-- Perfil -->
+				<div class="col-4">
+
+					<div class="card" style="width: 20rem;">
+						<div style="text-align: center; font-size: 180px; color:black;">
+							<i class="fas fa-user-circle"></i>
+						</div>
+
+						<div class="card-body">
+							<h5 id="userName" class="card-title"></h5>
+							<h6 id="userType" class="card-subtitle mb-3 text-muted"></h6>
+							<p id="userEmail" class="card-text"></p>
+						</div>
+					</div>
+
+
+				</div>
+				<!-- Opciones -->
+				<div class="col">
+					<div class="card">
+						<div id="opciones" class="card-title text-center">
+							<h3>Opciones disponibles</h3>
+						</div>
+						<!-- Asesor -->
+						<div id="opcionesAsesor" class="card-body">
+							<div class="container">
+								<div class="row justify-content-center">
+									<!-- Listar ordenes -->
+									<div class="col card m-1">
+										<div class="card-body">
+											<p class="card-text">
+												Listar todas las ordenes de pedido
+											</p>
+											<a href="ordenes.html" class="btn btn-primary">Listar</a>
+										</div>
+									</div>
+									<!-- Listar ordenes por fecha -->
+									<div class="col card m-1">
+										<div class="card-body">
+											<p class="card-text">
+												Listar ordenes de pedido por fecha
+											</p>
+											<a href="ordenes.html" class="btn btn-primary">Buscar por fecha</a>
+										</div>
+									</div>
+									<!-- Listar ordenes por estado -->
+									<div class="col card m-1">
+										<div class="card-body">
+											<p class="card-text">
+												Listar ordenes de pedido por estado
+											</p>
+											<a href="ordenes.html" class="btn btn-primary">Buscar por estado</a>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Coordinador -->
+						<div id="opcionesCoord" class="card-body">
+
+							<div class="container">
+								<div class="row justify-content-center">
+									<!-- aprovar/rechazar ordenes -->
+									<div class="col card m-1">
+										<div class="card-body">
+											<p class="card-text">
+												Aprobar/Rechazar Ordenes de pedido
+											</p>
+											<a href="ordenes.html" class="btn btn-primary">Gestionar Ordenes</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Administrador -->
+						<div id="opcionesAdm" class="card-body">
+							<div class="container">
+								<div class="row justify-content-center">
+									<!-- Administrar usuarios -->
+									<div class="col card m-1">
+										<div class="card-body">
+											<p class="card-text">
+												Administración de Usuarios
+											</p>
+											<a href="usuarios.html" class="btn btn-primary">Usuarios</a>
+										</div>
+									</div>
+									<!-- Administrar productos -->
+									<div class="col card m-1">
+										<div class="card-body">
+											<p class="card-text">
+												Administración catalogo
+											</p>
+											<a href="catalogo.html" class="btn btn-primary">catalogo</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+	</section>
+
+	<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="tituloUsuario"></h4>
+				</div>
+				<div class="modal-footer">
+					<button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/menu/menu.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</html>
