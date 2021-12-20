@@ -1,3 +1,6 @@
+/**
+ * Este evento de JQuery se ejecuta cuando se termina de cargar la libreria
+ */
 $(document).ready(function () {
     estadoInicial();
 
@@ -7,7 +10,9 @@ $(document).ready(function () {
     });
 });
 
-
+/**
+ * Estado inicial de la pagina, valida si el usuario se encuentra autenticado en la aplicaciòn
+ */
 function estadoInicial() {
     $("#opcionesAsesor").hide();
     $("#opcionesAdm").hide();
@@ -29,6 +34,7 @@ function estadoInicial() {
             tipoUsuario = "COORDINADOR";
         }
 
+        //Valida el perfil para mostrar opciones sobre las que se tien acceso
         if (tipoUsuario == "ASESOR") {
             $("#opcionesAsesor").show();
             $("#opcionesAdm").hide();
