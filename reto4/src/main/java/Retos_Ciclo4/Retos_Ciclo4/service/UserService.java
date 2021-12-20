@@ -8,19 +8,37 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * 
+ * @author grupo desarrollo
+ */
 @Service
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-
+    
+    /**
+     * listar todos los usuarios
+     * @return lista
+     */
     public List<User> getAll() {
         return userRepository.getAll();
     }
-
+    
+    /**
+     * buscar usuario por id
+     * @param id
+     * @return usuario 
+     */
     public Optional<User> getUser(int id) {
         return userRepository.getUser(id);
     }
-
+    
+    /**
+     * crear usuario
+     * @param user
+     * @return usuario
+     */
     public User create(User user) {
         if (user.getId() == null) {
             return user;
@@ -38,6 +56,12 @@ public class UserService {
         }
     }
 
+    
+    /**
+     * actualizar usuario
+     * @param user
+     * @return usuario
+     */
     public User update(User user) {
         if (user.getId() != null) {
             Optional<User> userDb = userRepository.getUser(user.getId());
@@ -85,6 +109,12 @@ public class UserService {
         }
     }
 
+    
+    /**
+     * eliminar usuario
+     * @param userId
+     * @return boolean
+     */
     public boolean delete(int userId) {
         Boolean aBoolean = getUser(userId).map(user -> {
             userRepository.delete(user);
@@ -92,11 +122,23 @@ public class UserService {
         }).orElse(false);
         return aBoolean;
     }
-
+    
+    /**
+     * verificar email
+     * @param email
+     * @return boolean
+     */
     public boolean emailExists(String email) {
         return userRepository.emailExists(email);
     }
 
+    
+    /**
+     * autenticar credenciales usuario
+     * @param email
+     * @param password
+     * @return usuario
+     */
     public User authenticateUser(String email, String password) {
         Optional<User> usuario = userRepository.authenticateUser(email, password);
         if (usuario.isEmpty( )) {
@@ -106,6 +148,11 @@ public class UserService {
         }
     }
     
+    /**
+     * listar usuarios por fecha
+     * @param monthBirthtDay
+     * @return lista
+     */
     public List<User> birthtDayList(String monthBirthtDay){
         return userRepository.birthtDayList(monthBirthtDay);
     }
